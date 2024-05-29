@@ -25,12 +25,14 @@ const LoginForm = () => {
         localStorage.setItem('loginData', JSON.stringify(formData));
         setError('');
         navigate('/movies');
+        setFormData({ username: '', password: '' });
       } else {
         setError('Invalid credentials');
       }
     } else {
       setError('No user data found. Please sign up first.');
     }
+    
   };
 
   return (

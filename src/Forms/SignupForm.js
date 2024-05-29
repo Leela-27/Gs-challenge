@@ -8,7 +8,7 @@ const SignupForm = () => {
     email: '',
     password: '',
     phone: '',
-    profession: 'Select your profession',
+    profession: '',
   });
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
@@ -25,6 +25,12 @@ const SignupForm = () => {
     setTimeout(() => {
       navigate('/login');
     }, 3000);
+    setFormData({    
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+    profession: ''})
   };
 
   return (
@@ -39,7 +45,7 @@ const SignupForm = () => {
           id="name"
           value={formData.name}
           onChange={handleChange}
-          ariaLabel="Name"
+          aria-label="Name"
         />
         <SignUpInputField
           label="Email"
@@ -48,7 +54,7 @@ const SignupForm = () => {
           id="email"
           value={formData.email}
           onChange={handleChange}
-          ariaLabel="Email"
+          aria-label="Email"
         />
         <SignUpInputField
           label="Password"
@@ -57,7 +63,7 @@ const SignupForm = () => {
           id="password"
           value={formData.password}
           onChange={handleChange}
-          ariaLabel="Password"
+          aria-label="Password"
         />
         <SignUpInputField
           label="Phone Number"
@@ -66,7 +72,7 @@ const SignupForm = () => {
           id="phone"
           value={formData.phone}
           onChange={handleChange}
-          ariaLabel="Phone Number"
+          aria-label="Phone Number"
         />
         <SignUpInputField
           label="Profession"
@@ -85,19 +91,19 @@ const SignupForm = () => {
             'Product Manager',
             'Other',
           ]}
-          ariaLabel="Profession"
+          aria-label="Profession"
         />
         <button
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          ariaLabel="Sign Up"
+          aria-label="Sign Up"
         >
           Sign Up
         </button>
         {successMessage && <p className="text-green-500 mt-4">{successMessage}</p>}
         <p className="mt-4">
           Already have an account?{' '}
-          <Link to="/login" className="text-blue-500 hover:text-blue-700" ariaLabel="Log In">
+          <Link to="/login" className="text-blue-500 hover:text-blue-700" aria-label="Log In">
             Log In
           </Link>
         </p>
